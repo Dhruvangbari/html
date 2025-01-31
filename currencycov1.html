@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #20012b;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Currency Converter</h1>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" placeholder="Enter amount" required>
+    
+    <label for="fromCurrency">From Currency:</label>
+    <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+    </select>
+    
+    <label for="toCurrency">To Currency:</label>
+    <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+    </select>
+    
+    <button onclick="convertCurrency()">Convert</button>
+    
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function convertCurrency() {
+        const amount = parseFloat(document.getElementById('amount').value);
+        const fromCurrency = document.getElementById('fromCurrency').value;
+        const toCurrency = document.getElementById('toCurrency').value;
+
+        if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid amount");
+            return;
+        }
+
+        // cur rates
+        const rates = {
+            USD: { EUR: 0.92, GBP: 0.75, INR: 83.2, AUD: 1.45 },
+            EUR: { USD: 1.09, GBP: 0.82, INR: 90.4, AUD: 1.57 },
+            GBP: { USD: 1.33, EUR: 1.22, INR: 110.4, AUD: 1.91 },
+            INR: { USD: 0.012, EUR: 0.011, GBP: 0.009, AUD: 0.017 },
+            AUD: { USD: 0.69, EUR: 0.64, GBP: 0.52, INR: 59.4 }
+        };
+
+        const result = amount * rates[fromCurrency][toCurrency];
+        document.getElementById('result').textContent = `${amount} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency}`;
+    }
+    //code credit DHRUVANG BARI
+</script>
+
+</body>
+</html>
