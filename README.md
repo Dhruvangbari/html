@@ -24,3 +24,18 @@ A simple and responsive **Currency Converter Web App** built using **HTML, CSS, 
 ---
 
 ## 📂 Project Structurecurrency-converter/ │ ├── index.html ├── style.css ├── script.js └── README.md
+---
+
+## ⚙️ How It Works
+
+1. Enter the **amount** you want to convert.  
+2. Select the **From Currency**.  
+3. Select the **To Currency**.  
+4. Click the **Convert** button.  
+5. The converted amount will be displayed instantly.
+
+---
+
+## ▶️ How to Run the Project
+
+1. Download or clone the repository.
