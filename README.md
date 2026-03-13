@@ -39,3 +39,28 @@ A simple and responsive **Currency Converter Web App** built using **HTML, CSS, 
 ## ▶️ How to Run the Project
 
 1. Download or clone the repository.
+ 2. Open the project folder.
+
+3. Open **index.html** in your browser.
+
+---
+
+## 🔮 Future Improvements
+
+- Add currency **flags**
+- Add **swap currency** button
+- Add **historical exchange rate charts**
+- Add **dark mode**
+- Improve UI design
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome. Feel free to fork this repository and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
